@@ -1,0 +1,42 @@
+@import '~react-day-picker/dist/style.css';
+
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-background-color: theme('colors.highlight');
+  --rdp-accent-color: theme('colors.highlight');
+  @apply m-0;
+  @apply font-open-sans-condensed;
+}
+
+.rdp.rdp-head_cell {
+  @apply font-open-sans-condensed;
+  @apply font-normal;
+}
+
+.rdp-button.rdp-day {
+  @apply rounded-none;
+  @apply text-lg;
+  @apply m-[0px];
+  @apply sm:my-[2px];
+  @apply sm:p-[21px];
+}
+
+.rdp-button.rdp-day_today:not(.rdp-day_selected):not(:hover) {
+  @apply text-highlight;
+}
+
+.rdp .rdp-day.rdp-button:not(.rdp-day_selected):hover {
+  @apply bg-highlight;
+  @apply bg-opacity-50;
+}
+
+.rdp .rdp-day_selected {
+  background-color: var(--rdp-accent-color);
+}
+
+.rdp-caption_label {
+  @apply font-open-sans-condensed;
+  @apply font-normal;
+  @apply text-lg;
+  @apply pt-1;
+}

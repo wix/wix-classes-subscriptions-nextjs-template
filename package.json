@@ -1,0 +1,44 @@
+{
+  "name": "wix-fitness-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "test": "",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.24.4",
+    "@wix/api-client": "^1.1.36",
+    "@wix/bookings": "^1.0.38",
+    "@wix/pricing-plans": "^1.0.13",
+    "@wix/redirects-api": "^1.0.13",
+    "cookie": "^0.5.0",
+    "date-fns": "^2.29.3",
+    "flowbite": "^1.6.3",
+    "flowbite-react": "^0.3.8",
+    "jsurl": "^0.1.5",
+    "next": "^13.2.4",
+    "react": "18.2.0",
+    "react-day-picker": "^8.5.1",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/cookie": "^0.5.1",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.33.0",
+    "eslint-config-next": "13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.6",
+    "typescript": "4.9.5"
+  },
+  "packageManager": "yarn@3.3.0"
+}

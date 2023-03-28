@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .footer-form-input {
+    @apply block;
+    @apply w-full;
+    @apply px-3;
+    @apply py-[1px];
+    @apply text-gray-c1;
+    @apply placeholder:text-gray-c2;
+    @apply border;
+    @apply border-2;
+    @apply border-black;
+    @apply rounded-none;
+    @apply bg-transparent;
+    @apply focus:border-black;
+    @apply focus:ring-black;
+    @apply leading-5;
+    @apply mt-1;
+    @apply text-lg;
+  }
+}
