@@ -51,11 +51,9 @@ function formatPlanDuration(plan: plans.Plan) {
 
 export default function PlansList({
   checkoutData,
-  maxStartDate,
   plans,
 }: {
   checkoutData?: string;
-  maxStartDate?: string;
   plans?: plans.PublicPlan[];
 }) {
   return (
@@ -92,7 +90,6 @@ export default function PlansList({
                       checkoutUrl={getCheckoutUrl({
                         plan,
                         checkoutData,
-                        maxStartDate,
                       })}
                     >
                       <div className="btn-secondary w-full cursor-pointer mt-5">

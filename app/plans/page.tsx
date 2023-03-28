@@ -7,7 +7,7 @@ export default async function PlansPage({
 }: {
   searchParams?: { [_: string]: string };
 }) {
-  const { planIds, checkoutData, maxStartDate } = searchParams ?? {};
+  const { planIds, checkoutData } = searchParams ?? {};
   const wixSession = useServerAuthSession();
   const { data: plans } = await safeGetPaidPlans(wixSession, {
     planIds: planIds ? planIds?.split(',') : undefined,
@@ -16,7 +16,6 @@ export default async function PlansPage({
     <PlansList
       plans={plans}
       checkoutData={checkoutData}
-      maxStartDate={maxStartDate}
     />
   );
 }
