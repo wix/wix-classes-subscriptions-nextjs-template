@@ -43,9 +43,14 @@ Authentication credentials are automatically incorporated into the template, mak
 
 ##### Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://manage.wix.com/headless-funnel-nextjs/netlify?repository=https://github.com/carmelc/wix-classes-subscriptions-nextjs-template)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://manage.wix.com/headless-funnel-nextjs/netlify?repository=https://github.com/wix/wix-classes-subscriptions-nextjs-template)
 
-For more information, see [How to Deploy Next.js Sites to Netlify](https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/) or view the demo [here](https://jovial-twilight-321f77.netlify.app/).
+##### Vercel
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone/hidden?demo-description=Bookings+Fitness+nextjs+template&demo-image=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template%2Fraw%2Fmain%2Fdocs%2Fmedia%2Ftemplate-showcase.gif&demo-title=Bookings+Fitness&demo-url=https%3A%2F%2Fvercel.bookings-classes-demo.wix.dev&integration-ids=oac_LZ0wUqGylqzgr8bE8a1R7JTE&project-name=bookings-coacher&repository-name=wix-classes-subscriptions-nextjs-template&s=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template&skippable-integrations=1&build-command=yarn+build&deploymentIds=dpl_9Gtegfcme9RUmTXFvVGrP8BwDGUV)
+
+
+For more information, see [How to Deploy Next.js Sites to Netlify](https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/) or view the demo [here](https://vercel.bookings-classes-demo.wix.dev).
 
 #### Option B: Create an OAuth client ID in the Wix dashboard
 
