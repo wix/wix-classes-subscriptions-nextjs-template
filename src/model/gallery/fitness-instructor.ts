@@ -7,44 +7,38 @@ export type GalleryItem = {
 
 export const galleryItems: Array<GalleryItem> = [
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Get Fit',
+    tagline: 'Outlast the competition with strength and conditioning training.',
     imgSrc: '/gallery/fitness-gallery-1.jpg',
     id: 'fitness-gallery-1',
   },
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Reach Your Goals',
+    tagline: 'Train to win and unleash the champion inside you.',
     imgSrc: '/gallery/fitness-gallery-2.jpg',
     id: 'fitness-gallery-2',
   },
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Push Yourself',
+    tagline: 'Break through your limits and reach new heights.',
     imgSrc: '/gallery/fitness-gallery-3.jpg',
     id: 'fitness-gallery-3',
   },
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Learn the Basics',
+    tagline: 'Build a strong foundation of boxing fundamentals.',
     imgSrc: '/gallery/fitness-gallery-4.jpg',
     id: 'fitness-gallery-4',
   },
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Find Your Focus',
+    tagline: 'Gain a mental and physical edge over your opponents.',
     imgSrc: '/gallery/fitness-gallery-5.jpg',
     id: 'fitness-gallery-5',
   },
   {
-    title: 'I’m an image title',
-    tagline:
-      'Describe your image here. Use catchy text to tell people the story behind the photo. Go to "Manage Media" to add your content.',
+    title: 'Take it to the next level',
+    tagline: 'Reach new heights with advanced training techniques.',
     imgSrc: '/gallery/fitness-gallery-6.jpg',
     id: 'fitness-gallery-6',
   },

@@ -28,9 +28,12 @@ const Footer = () => (
           <p className="uppercase mb-5 sm:mb-10 text-3xl tracking-[.35em]">
             Contact Me
           </p>
-          <div className="text-2xl tracking-wider max-w-[260px]">
-            <section className="mt-6 sm:mt-12">
-              <p>WRITE OR CALL ME IF YOU HAVE MORE QUESTIONS</p>
+          <div className="text-2xl tracking-wider max-w-[350px]">
+            <section className="mt-6 sm:mt-12 uppercase">
+              <p>
+                Feel free to reach out with any questions or concerns. I look
+                forward to meeting you!
+              </p>
             </section>
             <section className="mt-8 sm:mt-14">
               <p>INFO@MYSITE.COM</p>
@@ -141,7 +144,10 @@ const Footer = () => (
               placeholder="Message"
               aria-required="false"
             />
-            <div aria-disabled="false" className="flex justify-end mt-4 mb-10">
+            <div
+              aria-disabled="false"
+              className="flex justify-end my-4 sm:mt-12"
+            >
               <button
                 className="btn-secondary w-full p-1 text-lg w-full sm:w-32"
                 aria-disabled="false"

@@ -121,23 +121,30 @@ export default async function Home() {
       <ScrollIntoView hashName="#about" offset="-90px" />
       <div className="min-h-screen bg-[url('/home/fitness-background-2.jpg')] parallax-background">
         <div className="max-w-full-content mx-auto box-content pt-2">
-          <div className="max-w-[330px] pt-10 pb-2">
+          <div className="max-w-[400px] pt-10 pb-2">
             <h2 className="uppercase text-7xl leading-tight py-7">
               Meet The Coach
             </h2>
-            <section className="font-open-sans-condensed text-lg text-stone-300 tracking-wider">
+            <section className="font-open-sans-condensed text-base text-stone-300 tracking-wider">
               <p className="py-3">
-                {`I am John Dixon, a passionate and dedicated fitness trainer with over a decade of experience in the industry.
-                My goal is to help people achieve their fitness objectives by developing customized exercise and nutrition
-                plans that fit their individual needs and goals. I believe that fitness is not just about physical strength,
-                but also about mental and emotional wellbeing.
-                I am committed to providing my clients with a balanced and healthy lifestyle that they can maintain in the long run.
+                {`Hi, I’m Joey Dixon and I’m a boxing coach with 15 years of boxing experience and 9 intercontinental cruiserweight titles. 
+                I’ve trained many successful boxers at national and international levels. I love teaching people how to box like a pro,
+                whether they are beginners or advanced fighters.
                 `}
               </p>
               <p className="py-3">
-                {`My coaching style is motivational and positive, and I push my clients to their limits to help them achieve their best results.
-                I am constantly expanding my knowledge and skills to ensure that I can provide the best possible training experience for my clients.
-                When I am not working with my clients, I enjoy hiking, practicing yoga, and spending quality time with my family.`}
+                {`To me, boxing is not only a sport, but also a way of life.
+                It teaches you discipline, resilience, confidence, and self-defense. It also keeps you fit, healthy, and mentally sharp.
+                That’s why I created this business to share my knowledge and skills with you.`}
+              </p>
+              <p className="py-3">
+                {`I have a friendly and supportive approach that will make you feel comfortable and motivated.
+                I also have a wealth of experience and expertise that will make you learn faster and better.
+                No matter what your age, level, or background, I can help you become the best boxer you can be.`}
+              </p>
+              <p className="py-3">
+                {`If you are interested in working with me or learning more about me, please feel free to contact me or browse through my website.
+                I look forward to hearing from you and helping you on your boxing journey.`}
               </p>
             </section>
             <section className="mt-5">
@@ -191,7 +198,7 @@ export default async function Home() {
         <section className="bg-[url('/home/coacher-achievements-background.jpg')] bg-center bg-cover">
           <div className="max-w-full-content px-4 mx-auto text-black">
             <h2 className="title pt-24 pb-20 tracking-[.3em] text-center">
-              Winnings
+              My Experience
             </h2>
             <ul className="grid grid-cols-2 lg:grid-cols-4 gap-16 pb-20 px-2">
               <AchievementItem
@@ -237,14 +244,14 @@ export default async function Home() {
         <div className="mx-auto max-w-md px-2">
           <h2 className="title tracking-widest">THE STUDIO</h2>
           <div className="pt-7 font-open-sans-condensed text-lg text-stone-300">
-            {`My fitness studio is a welcoming and supportive environment where people can come to work on their health
-            and fitness goals with the guidance and support of a professional trainer.`}
+            {`We train in a modern and spacious facility, conveniently located in the heart of San Francisco.
+            We have the equipment, facilities and expertise to take on clients of all ages and experience levels. Come by and check us out!`}
           </div>
           <section className="text-center uppercase pt-24 text-stone-200">
             <h4 className="text-3xl tracking-[.4em]">Address</h4>
-            <div className="text-2xl pt-6">
-              <div>500 TERRY FRANCOIS ST.</div>
-              <div>SF, CA 94158</div>
+            <div className="pt-6">
+              <div className="text-2xl">500 Terry A Francois Blvd</div>
+              <div className="text-lg">San Francisco, CA 94158, USA</div>
             </div>
           </section>
           <section className="text-center uppercase pt-20 text-stone-200">
