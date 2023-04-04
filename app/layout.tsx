@@ -31,10 +31,10 @@ export default function RootLayout(layoutProps: any) {
         </body>
       ) : (
         <body className="">
-          <main className="max-w-full-content mx-auto bg-white pt-32">
+          <main className="max-w-full-content mx-auto bg-gray-c2 pt-32">
             <h1>
-              Seems API key and site Id are not set, please define the
-              environment variables (refer to the Readme file for more details)
+              Seems that client id is not set, please define the environment
+              variables (refer to the Readme file for more details)
             </h1>
           </main>
         </body>

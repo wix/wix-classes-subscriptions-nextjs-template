@@ -14,7 +14,7 @@ export const useRedirectToCheckout = () => {
       session!
         .wixClient!.redirects.createRedirectSession({
           bookingsCheckout: {
-            slot: slotAvailability!,
+            slotAvailability: slotAvailability!,
             timezone,
             serviceId: slotAvailability?.slot?.serviceId,
           },
