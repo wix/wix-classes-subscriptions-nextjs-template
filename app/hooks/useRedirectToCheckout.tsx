@@ -1,5 +1,5 @@
 import { useClientAuthSession } from '@app/hooks/useClientAuthSession';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { createRedirectCallbacks } from '@model/redirects/redirect.utils';
 import { availabilityCalendar } from '@wix/bookings';
 import { useUserTimezone } from '@app/hooks/useFormattedTimezone';
@@ -23,7 +23,10 @@ export const useRedirectToCheckout = () => {
           }),
         })
         .then(({ redirectSession }) => {
-          window.location.href = redirectSession!.fullUrl!;
+          window.location.assign(redirectSession!.fullUrl!);
+          setTimeout(() => {
+            setRedirecting(false);
+          }, 2000);
         })
         .catch((e) => {
           console.error(e);
