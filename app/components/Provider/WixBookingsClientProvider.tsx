@@ -1,7 +1,7 @@
 'use client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PropsWithChildren, createContext } from 'react';
-import { createWixVisitorSession, WixSession } from '@model/auth/auth';
+import { createWixVisitorSession, WixSession } from '@app/model/auth/auth';
 import { CustomFlowbiteTheme, Flowbite } from 'flowbite-react';
 
 const queryClient = new QueryClient();

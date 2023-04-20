@@ -1,6 +1,6 @@
 import { useClientAuthSession } from '@app/hooks/useClientAuthSession';
 import { useCallback, useEffect, useState } from 'react';
-import { createRedirectCallbacks } from '@model/redirects/redirect.utils';
+import { createRedirectCallbacks } from '@app/model/redirects/redirect.utils';
 import { availabilityCalendar } from '@wix/bookings';
 import { useUserTimezone } from '@app/hooks/useFormattedTimezone';
 

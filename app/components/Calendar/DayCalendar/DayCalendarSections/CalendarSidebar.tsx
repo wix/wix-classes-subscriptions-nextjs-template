@@ -1,5 +1,5 @@
 'use client';
-import { ServiceInfoViewModel } from '@model/service/service.mapper';
+import { ServiceInfoViewModel } from '@app/model/service/service.mapper';
 import { useCallback, useEffect, useState } from 'react';
 import { format } from 'date-fns';
 

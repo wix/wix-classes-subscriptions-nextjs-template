@@ -1,5 +1,5 @@
 import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
-import { safeGetServices } from '@model/service/service-api';
+import { safeGetServices } from '@app/model/service/service-api';
 import { services } from '@wix/bookings';
 import WeeklyClassesCalendar from '@app/components/Calendar/WeeklyClassesCalendar/WeeklyClassesCalendar';
 

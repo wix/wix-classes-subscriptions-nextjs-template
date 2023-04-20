@@ -1,5 +1,5 @@
 'use client';
-import { ServiceInfoViewModel } from '@model/service/service.mapper';
+import { ServiceInfoViewModel } from '@app/model/service/service.mapper';
 import { useServiceFormattedPrice } from '@app/hooks/useServiceFormattedPrice';
 import WixMediaImage from '@app/components/Image/WixMediaImage';
 

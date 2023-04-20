@@ -1,8 +1,8 @@
 import PlansList from '@app/components/Plan/PlanList';
 import ServiceListPreviewView from '@app/components/ServiceList/ServiceListPreview';
 import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
-import { safeGetServices } from '@model/service/service-api';
-import { safeGetPaidPlans } from '@model/paid-plans/paid-plans-api';
+import { safeGetServices } from '@app/model/service/service-api';
+import { safeGetPaidPlans } from '@app/model/paid-plans/paid-plans-api';
 
 export default async function TrainingPage() {
   const wixSession = useServerAuthSession();

@@ -1,9 +1,9 @@
 import {
   mapServiceInfo,
   ServiceInfoViewModel,
-} from '@model/service/service.mapper';
+} from '@app/model/service/service.mapper';
 import { WixSession } from '../auth/auth';
-import { safeCall } from '@model/utils';
+import { safeCall } from '@app/model/utils';
 import { services } from '@wix/bookings';
 
 export const safeGetServices = (

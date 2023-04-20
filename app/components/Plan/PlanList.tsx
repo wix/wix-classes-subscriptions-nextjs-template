@@ -1,7 +1,7 @@
 import { plans } from '@wix/pricing-plans';
 import { formatCurrencyToParts } from '@app/utils/price-formtter';
 import PlanSelect from '@app/components/Plan/PlanSelect';
-import { getCheckoutUrl } from '@model/paid-plans/paid-plans-checkout';
+import { getCheckoutUrl } from '@app/model/paid-plans/paid-plans-checkout';
 
 const durationPeriodFormatter = (
   period: plans.PeriodUnit = plans.PeriodUnit.UNDEFINED

@@ -2,8 +2,8 @@
 import { NavLink } from './NavLink';
 import { useCallback, useState } from 'react';
 import type { LinkProps } from 'next/link';
-import LoginAvatar from '@app/components/Layout/NavBar/LoginAvatar';
 import { usePathname } from 'next/navigation';
+import Login from '@app/components/Login/Login.v2';
 
 const navbarItems = [
   { scroll: true, ref: '/', label: 'Home' },
@@ -70,9 +70,9 @@ export function NavBar() {
       <nav
         className={`${
           isMenuShown ? 'max-md:w-full' : 'max-md:w-0 max-md:opacity-0'
-        } transition-all duration-500 ease-in-out md:block overflow-hidden max-md:absolute max-md:animate-sideways-once max-md:h-screen max-md:bg-gray-c2 max-md:pt-24 z-40 top-0 right-0`}
+        } w-full transition-all duration-500 ease-in-out md:block overflow-hidden max-md:absolute max-md:animate-sideways-once max-md:h-screen max-md:bg-gray-c2 max-md:pt-24 z-40 top-0 right-0`}
       >
-        <ul className="flex flex-col items-center md:flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-8 justify-end text-md leading-[22px]">
+        <ul className="flex flex-col items-center md:flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-8 start text-md leading-[22px] px-6">
           {navbarItems.map(({ ref, label, scroll }) => (
             <li key={ref} className="relative">
               <StyledNavLink
@@ -89,27 +89,11 @@ export function NavBar() {
               <span className="absolute -bottom-5 md:hidden w-48 left-[calc(50%_-_theme(space.24))]" />
             </li>
           ))}
-          {/*For future use*/}
-          {/*<li className="order-first md:order-last justify-end">*/}
-          {/*  <StyledNavLink*/}
-          {/*    href="/login"*/}
-          {/*    isActive={'/login' === linkRef}*/}
-          {/*    onClick={() => {*/}
-          {/*      setIsMenuShown(false);*/}
-          {/*    }}*/}
-          {/*  >*/}
-          {/*    <div className="flex flex-nowrap text-highlight gap-2 justify-center items-center">*/}
-          {/*      <div>*/}
-          {/*        <LoginAvatar*/}
-          {/*          width={22}*/}
-          {/*          height={22}*/}
-          {/*          className="fill-highlight"*/}
-          {/*        />*/}
-          {/*      </div>*/}
-          {/*      <span className="whitespace-nowrap">Log In</span>*/}
-          {/*    </div>*/}
-          {/*  </StyledNavLink>*/}
-          {/*</li>*/}
+          <li className="order-first md:order-last justify-end grow">
+            <div className="flex flex-nowrap text-highlight gap-2 sm:justify-end justify-center items-center">
+              <Login onActionClick={() => setIsMenuShown(false)} />
+            </div>
+          </li>
         </ul>
       </nav>
     </>

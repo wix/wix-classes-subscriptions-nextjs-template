@@ -1,6 +1,9 @@
 import './page.css';
 import Image from 'next/image';
-import { GalleryItem, galleryItems } from '@model/gallery/fitness-instructor';
+import {
+  GalleryItem,
+  galleryItems,
+} from '@app/model/gallery/fitness-instructor';
 import ScrollIntoView from '@app/components/ScrollIntoView/ScrollIntoView';
 
 const TrainingOptionSelection = ({

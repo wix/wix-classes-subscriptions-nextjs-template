@@ -1,6 +1,6 @@
 import PlansList from '@app/components/Plan/PlanList';
 import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
-import { safeGetPaidPlans } from '@model/paid-plans/paid-plans-api';
+import { safeGetPaidPlans } from '@app/model/paid-plans/paid-plans-api';
 
 // Manually opt out static rendering because of https://github.com/vercel/next.js/issues/43077
 export const dynamic = 'force-dynamic';

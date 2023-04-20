@@ -1,5 +1,5 @@
 import './page.css';
-import { getServiceBySlug } from '@model/service/service-api';
+import { getServiceBySlug } from '@app/model/service/service-api';
 import DayCalendar from '@app/components/Calendar/DayCalendar/DayCalendar';
 import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
 

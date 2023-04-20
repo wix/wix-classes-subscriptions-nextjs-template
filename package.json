@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
+    "@types/js-cookie": "^3.0.3",
     "@wix/api-client": "^1.1.55",
     "@wix/bookings": "^1.0.122",
     "@wix/pricing-plans": "^1.0.16",
@@ -19,6 +20,7 @@
     "date-fns": "^2.29.3",
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.3.8",
+    "js-cookie": "^3.0.1",
     "jsurl": "^0.1.5",
     "next": "^13.2.4",
     "react": "18.2.0",
