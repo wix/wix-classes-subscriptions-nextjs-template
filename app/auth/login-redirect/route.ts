@@ -1,14 +1,11 @@
 import { wixClient } from '@app/model/auth/create-client';
-import { createRedirectCallbacks } from '@app/model/redirects/redirect.utils';
 
 import { NextResponse } from 'next/server';
 import {
   AUTH_CALLBACK_PATHNAME,
   AUTH_LOGIN_CALLBACK_PARAM,
   OAUTH_COOKIE_STATE,
-  WIX_LOGIN_REDIRECT,
 } from '@app/model/auth/auth.const';
-import Cookies from 'js-cookie';
 
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
