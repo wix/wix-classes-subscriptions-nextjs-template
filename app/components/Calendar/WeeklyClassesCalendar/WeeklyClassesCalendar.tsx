@@ -195,6 +195,7 @@ function WeeklyClassesCalendarView({ classes }: WeeklyCalendarProps) {
           {slotsPerDay.map(({ currDate, slotsForDay }, index) => {
             return isLoading || redirecting ? null : (
               <div
+                key={index}
                 className={`outline outline-1 outline-stone-400/[.5] ml-px animate-pulse-once ${
                   isSameDay(selectedDate, currDate)
                     ? 'w-full min-h-[220px]'
@@ -204,8 +205,8 @@ function WeeklyClassesCalendarView({ classes }: WeeklyCalendarProps) {
                 {slotsForDay?.length ? (
                   slotsForDay.map((slot, index) => (
                     <div
-                      className="w-full border-b border-stone-400/[.5] box-border -mb-px"
                       key={index}
+                      className="w-full border-b border-stone-400/[.5] box-border -mb-px"
                     >
                       <ClassSlot
                         slot={slot}

@@ -1,11 +1,5 @@
-import { wixClient, WixClientType } from './create-client';
+import { WixClientType } from './create-wix-client';
 
 export type WixSession = {
   wixClient: WixClientType;
-};
-
-export const createWixVisitorSession = (): WixSession => {
-  return {
-    wixClient,
-  };
 };

@@ -1,16 +1,18 @@
-import { wixClient } from '@app/model/auth/create-client';
-
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import {
   AUTH_CALLBACK_PATHNAME,
   AUTH_LOGIN_CALLBACK_PARAM,
   OAUTH_COOKIE_STATE,
 } from '@app/model/auth/auth.const';
+import { getServerWixClient } from '@app/model/auth/create-wix-client.server';
 
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
+  const wixClient = getServerWixClient({
+    cookieStore: request.cookies,
+  });
   const { searchParams } = new URL(request.url);
   const originalUrl = searchParams.get(AUTH_LOGIN_CALLBACK_PARAM);
   if (!originalUrl) {

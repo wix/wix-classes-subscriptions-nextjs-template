@@ -6,12 +6,15 @@ import {
   WIX_MEMBER_TOKEN,
   WIX_REFRESH_TOKEN,
 } from '@app/model/auth/auth.const';
-import { wixClient } from '@app/model/auth/create-client';
+import { getServerWixClient } from '@app/model/auth/create-wix-client.server';
 
 export async function middleware(request: NextRequest) {
   const cookies = request.cookies;
   const res = NextResponse.next();
   const memberToken = cookies.get(WIX_MEMBER_TOKEN);
+  const wixClient = getServerWixClient({
+    cookieStore: request.cookies,
+  });
   if (!cookies.get(WIX_REFRESH_TOKEN) && !memberToken) {
     const tokens = await wixClient!.auth.generateVisitorTokens();
     res.cookies.set(WIX_REFRESH_TOKEN, JSON.stringify(tokens.refreshToken), {
