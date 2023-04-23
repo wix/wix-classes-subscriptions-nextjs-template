@@ -1,6 +1,10 @@
 import { createClient, OAuthStrategy } from '@wix/api-client';
-import { availabilityCalendar, services } from '@wix/bookings';
-import { plans } from '@wix/pricing-plans';
+import {
+  availabilityCalendar,
+  services,
+  extendedBookings,
+} from '@wix/bookings';
+import { plans, orders } from '@wix/pricing-plans';
 import { redirects } from '@wix/redirects';
 import {
   WIX_MEMBER_TOKEN,
@@ -27,7 +31,14 @@ const getRefreshToken = (cookieStore: CookieStore) =>
 export const getWixClient = ({ cookieStore }: { cookieStore: CookieStore }) =>
   process.env.NEXT_PUBLIC_WIX_CLIENT_ID
     ? createClient({
-        modules: { availabilityCalendar, redirects, services, plans },
+        modules: {
+          availabilityCalendar,
+          redirects,
+          services,
+          plans,
+          orders,
+          bookings: extendedBookings,
+        },
         auth: OAuthStrategy({
           clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
           tokens: {

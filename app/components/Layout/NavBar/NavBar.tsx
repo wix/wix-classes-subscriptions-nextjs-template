@@ -1,9 +1,9 @@
 'use client';
-import { NavLink } from './NavLink';
 import { useCallback, useState } from 'react';
 import type { LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import Login from '@app/components/Login/Login';
+import { StyledNavLink } from '@app/components/Layout/NavBar/NavLink';
 
 const navbarItems = [
   { scroll: true, ref: '/', label: 'Home' },
@@ -13,26 +13,8 @@ const navbarItems = [
   { scroll: true, ref: '/classes-schedule', label: 'Book Online' },
   { scroll: true, ref: '/plans', label: 'Plans & Pricing' },
   { scroll: false, ref: '/#contact', label: 'Contact' },
+  { scroll: true, ref: '/account/my-account', label: 'My Account' },
 ];
-
-const StyledNavLink = ({
-  isActive,
-  className,
-  ...linkProps
-}: LinkProps & {
-  isActive: boolean;
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <NavLink
-    className={`${
-      className ?? ''
-    } font-open-sans-condensed uppercase hover:text-highlight ${
-      isActive ? 'text-white' : 'text-stone-400'
-    }`}
-    {...linkProps}
-  />
-);
 
 export function NavBar() {
   const [isMenuShown, setIsMenuShown] = useState(false);

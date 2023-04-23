@@ -1,5 +1,5 @@
 import { WixSession } from '../auth/auth';
-import type { plans } from '@wix/pricing-plans';
+import type { plans, orders } from '@wix/pricing-plans';
 import { safeCall } from '@app/model/utils';
 
 export const safeGetPaidPlans = (
@@ -12,6 +12,9 @@ export const safeGetPaidPlans = (
     'Get Public Plans'
   );
 };
+
+export const getMyPlanOrders = (wixSession: WixSession) =>
+  wixSession!.wixClient!.orders.memberListOrders();
 
 export const getPaidPlans = (
   wixSession: WixSession,
