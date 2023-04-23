@@ -29,8 +29,13 @@ export async function middleware(request: NextRequest) {
     (!memberToken && request.nextUrl.pathname.startsWith('/account'))
   ) {
     const redirectUrl = new URL(AUTH_LOGIN_PATHNAME, request.url);
-    redirectUrl.searchParams.set(AUTH_LOGIN_CALLBACK_PARAM, request.url);
+    const loginCallbackUrl = new URL(request.url);
     redirectUrl.searchParams.delete(REDIRECT_FROM_WIX_LOGIN_STATUS);
+    loginCallbackUrl.searchParams.delete(REDIRECT_FROM_WIX_LOGIN_STATUS);
+    redirectUrl.searchParams.set(
+      AUTH_LOGIN_CALLBACK_PARAM,
+      loginCallbackUrl.toString()
+    );
     return NextResponse.redirect(redirectUrl);
   }
   return res;
