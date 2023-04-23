@@ -3,7 +3,7 @@ import { NavLink } from './NavLink';
 import { useCallback, useState } from 'react';
 import type { LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
-import Login from '@app/components/Login/Login.v2';
+import Login from '@app/components/Login/Login';
 
 const navbarItems = [
   { scroll: true, ref: '/', label: 'Home' },

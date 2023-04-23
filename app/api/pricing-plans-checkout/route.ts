@@ -7,12 +7,7 @@ export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 
 export async function GET(request: Request) {
-  let baseUrl = `https://${request.headers.get('host')}`;
-  let referer = request.headers.get('referer');
-  if (referer) {
-    // get referrer with no search and query params
-    baseUrl = new URL('/', referer).toString();
-  }
+  const baseUrl = new URL('/', request.url).toString();
   const { searchParams } = new URL(request.url);
   const checkoutData = searchParams.get('checkoutData');
   const planId = searchParams.get('planId')!;
@@ -30,6 +25,6 @@ export async function GET(request: Request) {
         throw e;
       })) ?? {};
   return NextResponse.redirect(
-    redirectSession?.fullUrl ? redirectSession!.fullUrl! : referer || baseUrl
+    redirectSession?.fullUrl ? redirectSession!.fullUrl! : baseUrl
   );
 }

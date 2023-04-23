@@ -510,19 +510,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/api-client@npm:^1.1.55":
-  version: 1.1.55
-  resolution: "@wix/api-client@npm:1.1.55"
+"@wix/api-client@npm:^1.1.56":
+  version: 1.1.56
+  resolution: "@wix/api-client@npm:1.1.56"
   dependencies:
     "@babel/runtime": ^7.21.0
-    "@wix/identity": ^1.0.25
+    "@wix/identity": ^1.0.27
     "@wix/image-kit": ^1.31.0
-    "@wix/redirects": ^1.0.0
-    "@wix/sdk-types": 1.1.55
+    "@wix/redirects": ^1.0.1
+    "@wix/sdk-types": 1.1.56
     pkce-challenge: ^3.1.0
     querystring: ^0.2.1
     type-fest: ^2.19.0
-  checksum: 13d519d50072e6179de139d80509b512c877c40af578578bead19198fe1b60e126783857be293fd231ff1c478b2f6ae4e607471b3f8f5e9b24a7314a9a7eac78
+  checksum: 1f81653c0bf2b7c2832e7aa720eeb22e578e58fa1bf533feb91a33dadace4e287e4cbc58b04277cd0161379152e1b312bfb0fbe52ca9a4eaf10678f2968ccfda
   languageName: node
   linkType: hard
 
@@ -548,7 +548,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/identity@npm:^1.0.25":
+"@wix/identity@npm:^1.0.27":
   version: 1.0.27
   resolution: "@wix/identity@npm:1.0.27"
   dependencies:
@@ -682,7 +682,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/redirects@npm:^1.0.0, @wix/redirects@npm:^1.0.1":
+"@wix/redirects@npm:^1.0.1":
   version: 1.0.1
   resolution: "@wix/redirects@npm:1.0.1"
   dependencies:
@@ -693,7 +693,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/sdk-types@npm:1.1.55, @wix/sdk-types@npm:^1.0.0":
+"@wix/sdk-types@npm:1.1.56":
+  version: 1.1.56
+  resolution: "@wix/sdk-types@npm:1.1.56"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+  checksum: 68023cb6c081be66c72319548f752f2610eaece0c1bac45b064354c8681099dcabfe96b42e4b84836941cacb9b3657c40417e8f553a45a195a36b741683b3725
+  languageName: node
+  linkType: hard
+
+"@wix/sdk-types@npm:^1.0.0":
   version: 1.1.55
   resolution: "@wix/sdk-types@npm:1.1.55"
   dependencies:
@@ -4521,7 +4530,7 @@ __metadata:
     "@types/node": 18.13.0
     "@types/react": 18.0.27
     "@types/react-dom": 18.0.10
-    "@wix/api-client": ^1.1.55
+    "@wix/api-client": ^1.1.56
     "@wix/bookings": ^1.0.122
     "@wix/pricing-plans": ^1.0.16
     "@wix/redirects": ^1.0.1

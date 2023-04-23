@@ -5,6 +5,7 @@ import { OauthRedirectState } from '@wix/api-client';
 import { useClientAuthSession } from '@app/hooks/useClientAuthSession';
 import {
   OAUTH_COOKIE_STATE,
+  WIX_LOGIN_REDIRECT,
   WIX_MEMBER_TOKEN,
 } from '@app/model/auth/auth.const';
 import { WixBookingsClientProvider } from '@app/components/Provider/WixBookingsClientProvider';
@@ -29,6 +30,7 @@ const CallbackHandle = () => {
 
     wixClient!.auth.getMemberTokens(code, state, oAuthState).then((tokens) => {
       Cookies.remove(OAUTH_COOKIE_STATE);
+      Cookies.remove(WIX_LOGIN_REDIRECT);
       Cookies.set(WIX_MEMBER_TOKEN, JSON.stringify(tokens.refreshToken), {
         expires: 2,
       });

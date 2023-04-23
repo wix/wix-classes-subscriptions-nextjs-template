@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
   AUTH_LOGIN_CALLBACK_PARAM,
   AUTH_LOGIN_PATHNAME,
+  REDIRECT_FROM_WIX_LOGIN_STATUS,
   WIX_MEMBER_TOKEN,
   WIX_REFRESH_TOKEN,
 } from '@app/model/auth/auth.const';
@@ -17,10 +18,20 @@ export async function middleware(request: NextRequest) {
       maxAge: 60 * 60 * 24 * 30,
     });
   }
-  if (!memberToken && request.nextUrl.pathname.startsWith('/account')) {
+  const wixMemberLoggedIn = request.nextUrl.searchParams.get(
+    REDIRECT_FROM_WIX_LOGIN_STATUS
+  );
+  if (wixMemberLoggedIn === 'false') {
+    cookies.delete(WIX_MEMBER_TOKEN);
+  }
+  if (
+    wixMemberLoggedIn === 'true' ||
+    (!memberToken && request.nextUrl.pathname.startsWith('/account'))
+  ) {
     const redirectUrl = new URL(AUTH_LOGIN_PATHNAME, request.url);
     redirectUrl.searchParams.set(AUTH_LOGIN_CALLBACK_PARAM, request.url);
-    return NextResponse.rewrite(redirectUrl);
+    redirectUrl.searchParams.delete(REDIRECT_FROM_WIX_LOGIN_STATUS);
+    return NextResponse.redirect(redirectUrl);
   }
   return res;
 }
