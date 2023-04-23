@@ -1,4 +1,4 @@
-import { CookieStore, getWixClient } from '@app/model/auth/create-wix-client';
+import { CookieStore, getWixClient } from '@app/model/auth/wix-client.base';
 import { RequestCookies } from 'next/dist/compiled/@edge-runtime/cookies';
 
 export type RequestCookiesGetter = Pick<RequestCookies, 'get'>;

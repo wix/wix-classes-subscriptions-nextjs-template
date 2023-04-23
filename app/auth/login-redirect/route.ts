@@ -4,7 +4,7 @@ import {
   AUTH_LOGIN_CALLBACK_PARAM,
   OAUTH_COOKIE_STATE,
 } from '@app/model/auth/auth.const';
-import { getServerWixClient } from '@app/model/auth/create-wix-client.server';
+import { getServerWixClient } from '@app/model/auth/wix-client.server';
 
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;

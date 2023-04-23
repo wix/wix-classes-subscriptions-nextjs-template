@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PropsWithChildren, createContext } from 'react';
 import { WixSession } from '@app/model/auth/auth';
 import { CustomFlowbiteTheme, Flowbite } from 'flowbite-react';
-import { getBrowserWixClient } from '@app/model/auth/create-wix-client.browser';
+import { getBrowserWixClient } from '@app/model/auth/wix-client.browser';
 
 const queryClient = new QueryClient();
 

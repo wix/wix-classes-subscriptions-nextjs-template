@@ -6,7 +6,7 @@ import {
   WIX_MEMBER_TOKEN,
   WIX_REFRESH_TOKEN,
 } from '@app/model/auth/auth.const';
-import { getServerWixClient } from '@app/model/auth/create-wix-client.server';
+import { getServerWixClient } from '@app/model/auth/wix-client.server';
 
 export async function middleware(request: NextRequest) {
   const cookies = request.cookies;

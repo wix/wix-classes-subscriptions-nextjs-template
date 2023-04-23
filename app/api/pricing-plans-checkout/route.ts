@@ -1,7 +1,7 @@
 import { createRedirectCallbacks } from '@app/model/redirects/redirect.utils';
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerWixClient } from '@app/model/auth/create-wix-client.server';
+import { getServerWixClient } from '@app/model/auth/wix-client.server';
 
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
