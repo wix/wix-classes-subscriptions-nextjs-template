@@ -14,7 +14,14 @@ export const safeGetPaidPlans = (
 };
 
 export const getMyPlanOrders = (wixSession: WixSession) =>
-  wixSession!.wixClient!.orders.memberListOrders();
+  safeCall(
+    () =>
+      wixSession!
+        .wixClient!.orders.memberListOrders()
+        .then((res) => res.orders),
+    [],
+    'Get My Plan Orders'
+  );
 
 export const getPaidPlans = (
   wixSession: WixSession,
