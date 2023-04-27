@@ -1,7 +1,7 @@
 'use client';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
-import { OauthRedirectState } from '@wix/api-client';
+import { OauthData } from '@wix/api-client';
 import { useClientAuthSession } from '@app/hooks/useClientAuthSession';
 import {
   OAUTH_COOKIE_STATE,
@@ -16,10 +16,10 @@ const CallbackHandle = () => {
 
   useEffect(() => {
     const oAuthStateCookie = Cookies.get(OAUTH_COOKIE_STATE);
-    const oAuthState: OauthRedirectState = JSON.parse(oAuthStateCookie ?? '{}');
+    const oauthData: OauthData = JSON.parse(oAuthStateCookie ?? '{}');
     const originalUrl =
       // use home by default
-      oAuthState.originalUrl || new URL('/', window.location.href).toString();
+      oauthData.originalUri || new URL('/', window.location.href).toString();
 
     if (window.location.search.includes('error=')) {
       window.location.href = originalUrl;
@@ -28,7 +28,7 @@ const CallbackHandle = () => {
 
     const { state, code } = wixClient!.auth.parseFromUrl();
 
-    wixClient!.auth.getMemberTokens(code, state, oAuthState).then((tokens) => {
+    wixClient!.auth.getMemberTokens(code, state, oauthData).then((tokens) => {
       Cookies.remove(OAUTH_COOKIE_STATE);
       Cookies.remove(WIX_LOGIN_REDIRECT);
       Cookies.set(WIX_MEMBER_TOKEN, JSON.stringify(tokens.refreshToken), {

@@ -24,9 +24,11 @@ const LoginComp = ({ onActionClick }: LoginProps) => {
     onActionClick(isLoggedIn);
     if (isLoggedIn) {
       // after logout return to home page
-      const { url } = await wixClient!.auth.logout(window.location.origin);
+      const { logoutUrl } = await wixClient!.auth.logout(
+        window.location.origin
+      );
       Cookies.remove(WIX_MEMBER_TOKEN);
-      window.location.href = url;
+      window.location.href = logoutUrl;
     } else {
       const loginUrl = new URL(AUTH_LOGIN_PATHNAME, window.location.origin);
       loginUrl.searchParams.set(

@@ -21,15 +21,12 @@ export async function GET(request: NextRequest) {
     );
   }
   const redirectUrl = new URL(AUTH_CALLBACK_PATHNAME, request.url).toString();
-  const oAuthState = wixClient!.auth.generateOauthRedirectState(
-    redirectUrl,
-    originalUrl
-  );
-  const { url } = await wixClient!.auth.authorizationUrl(oAuthState);
-  const response = NextResponse.redirect(url);
+  const oauthData = wixClient!.auth.generateOAuthData(redirectUrl, originalUrl);
+  const { authUrl } = await wixClient!.auth.getAuthUrl(oauthData);
+  const response = NextResponse.redirect(authUrl);
   response.cookies.set({
     name: OAUTH_COOKIE_STATE,
-    value: JSON.stringify(oAuthState),
+    value: JSON.stringify(oauthData),
     maxAge: 1800, // 30 minutes
   });
   return response;
