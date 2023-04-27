@@ -20,7 +20,7 @@ export default function MyAccountSection({
           <MyAccountMenu />
         </div>
       </div>
-      <div className="bg-gray-c2 h-full grow p-6">{children}</div>
+      <div className="bg-gray-c2 h-full grow p-7">{children}</div>
     </div>
   );
 }

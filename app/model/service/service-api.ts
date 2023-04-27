@@ -5,6 +5,7 @@ import {
 import { WixSession } from '../auth/auth';
 import { safeCall } from '@app/model/utils';
 import { services } from '@wix/bookings';
+import { getService } from '@wix/bookings/build/cjs/src/bookings-services-v2-service.universal';
 
 export const safeGetServices = (
   wixSession?: WixSession,
@@ -64,4 +65,19 @@ export const getServiceBySlug = (
         ),
     null,
     'Get Service By Slug'
+  );
+
+export const getServiceById = (
+  wixSession: WixSession,
+  serviceId: string
+): Promise<{
+  data: ServiceInfoViewModel | null;
+  hasError: boolean;
+  errorMsg?: string;
+}> =>
+  safeCall<ServiceInfoViewModel | null>(
+    () =>
+      wixSession.wixClient!.services.getService(serviceId).then(mapServiceInfo),
+    null,
+    'Get Service By Id'
   );

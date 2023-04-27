@@ -1,5 +1,5 @@
 import { WixSession } from '../auth/auth';
-import type { plans, orders } from '@wix/pricing-plans';
+import { plans, orders } from '@wix/pricing-plans';
 import { safeCall } from '@app/model/utils';
 
 export const safeGetPaidPlans = (
@@ -26,3 +26,9 @@ export const getPaidPlans = (
   }
   return queryBuilder.limit(limit).find();
 };
+
+export const cancelPlanOrder = (wixSession: WixSession, planOrderId: string) =>
+  wixSession!.wixClient!.orders.requestCancellation(
+    planOrderId,
+    orders.CancellationEffectiveAt.IMMEDIATELY
+  );

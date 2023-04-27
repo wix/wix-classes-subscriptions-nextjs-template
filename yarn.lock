@@ -671,14 +671,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wix/pricing-plans@npm:^1.0.16":
-  version: 1.0.16
-  resolution: "@wix/pricing-plans@npm:1.0.16"
+"@wix/pricing-plans@npm:^1.0.17":
+  version: 1.0.17
+  resolution: "@wix/pricing-plans@npm:1.0.17"
   dependencies:
     "@wix/metro-runtime": ^1.0.0
     "@wix/motion-edm-autogen-query-wrapper": ^1.0.0
     "@wix/sdk-types": ^1.0.0
-  checksum: da38dcb90c9923885dc5c490d041d3088c11be4e0d07c6fe6308338da5148ac2d8511b9e4eeb79227c704816281304e618d3b6d0febb2ef620bfd6d06a22f6c3
+  checksum: bbd0c7f1cd05a7b41d8e294eb3d0503e2e8ba8c288841153bad6d080eb51747cd41bfabec0723a2a172a9031bf21d175b6f31299bb0fb74483861b2aad47c49d
   languageName: node
   linkType: hard
 
@@ -4543,7 +4543,7 @@ __metadata:
     "@types/react-dom": 18.0.10
     "@wix/api-client": ^1.1.58
     "@wix/bookings": ^1.0.122
-    "@wix/pricing-plans": ^1.0.16
+    "@wix/pricing-plans": ^1.0.17
     "@wix/redirects": ^1.0.1
     autoprefixer: ^10.4.13
     cookie: ^0.5.0

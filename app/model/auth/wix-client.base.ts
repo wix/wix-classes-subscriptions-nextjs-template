@@ -3,6 +3,7 @@ import {
   availabilityCalendar,
   services,
   extendedBookings,
+  bookings,
 } from '@wix/bookings';
 import { plans, orders } from '@wix/pricing-plans';
 import { redirects } from '@wix/redirects';
@@ -38,6 +39,7 @@ export const getWixClient = ({ cookieStore }: { cookieStore: CookieStore }) =>
           plans,
           orders,
           bookings: extendedBookings,
+          bookingsActions: bookings,
         },
         auth: OAuthStrategy({
           clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
