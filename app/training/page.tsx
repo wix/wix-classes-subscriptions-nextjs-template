@@ -16,11 +16,6 @@ export default async function TrainingPage() {
         <h1 className="text-center">Training</h1>
       </div>
       <ServiceListPreviewView services={services} />
-      <div className="text-center mt-16">
-        <a className="btn-main text-lg pt-1 pb-2 px-8" href="/classes-schedule">
-          Book Now
-        </a>
-      </div>
       <PlansList plans={plans} />
     </>
   );
