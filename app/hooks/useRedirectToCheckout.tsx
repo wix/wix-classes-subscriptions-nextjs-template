@@ -16,7 +16,6 @@ export const useRedirectToCheckout = () => {
           bookingsCheckout: {
             slotAvailability: slotAvailability!,
             timezone,
-            serviceId: slotAvailability?.slot?.serviceId,
           },
           callbacks: createRedirectCallbacks({
             baseUrl: window.location.origin,
