@@ -1,12 +1,12 @@
 'use client';
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
-import { OauthData } from '@wix/api-client';
+import type { OauthData } from '@wix/api-client';
 import { useClientAuthSession } from '@app/hooks/useClientAuthSession';
 import {
   OAUTH_COOKIE_STATE,
   WIX_LOGIN_REDIRECT,
-  WIX_MEMBER_TOKEN,
+  WIX_REFRESH_TOKEN,
 } from '@app/model/auth/auth.const';
 import { WixBookingsClientProvider } from '@app/components/Provider/WixBookingsClientProvider';
 import { Spinner } from 'flowbite-react';
@@ -31,7 +31,7 @@ const CallbackHandle = () => {
     wixClient!.auth.getMemberTokens(code, state, oauthData).then((tokens) => {
       Cookies.remove(OAUTH_COOKIE_STATE);
       Cookies.remove(WIX_LOGIN_REDIRECT);
-      Cookies.set(WIX_MEMBER_TOKEN, JSON.stringify(tokens.refreshToken), {
+      Cookies.set(WIX_REFRESH_TOKEN, JSON.stringify(tokens.refreshToken), {
         expires: 2,
       });
       window.location.href = originalUrl;

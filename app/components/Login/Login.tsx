@@ -6,7 +6,7 @@ import {
   AUTH_CALLBACK_PATHNAME,
   AUTH_LOGIN_CALLBACK_PARAM,
   AUTH_LOGIN_PATHNAME,
-  WIX_MEMBER_TOKEN,
+  WIX_REFRESH_TOKEN,
 } from '@app/model/auth/auth.const';
 import LoginAvatar from '@app/components/Layout/NavBar/LoginAvatar';
 import { WixBookingsClientProvider } from '@app/components/Provider/WixBookingsClientProvider';
@@ -18,8 +18,7 @@ type LoginProps = {
 };
 const LoginComp = ({ onActionClick }: LoginProps) => {
   const { wixClient } = useClientAuthSession();
-  const memberSession = Cookies.get(WIX_MEMBER_TOKEN);
-  const isLoggedIn = JSON.parse(memberSession || '{}').value;
+  const isLoggedIn = wixClient?.auth.loggedIn();
   const onLoginClick = async () => {
     onActionClick(isLoggedIn);
     if (isLoggedIn) {
@@ -27,7 +26,7 @@ const LoginComp = ({ onActionClick }: LoginProps) => {
       const { logoutUrl } = await wixClient!.auth.logout(
         window.location.origin
       );
-      Cookies.remove(WIX_MEMBER_TOKEN);
+      Cookies.remove(WIX_REFRESH_TOKEN);
       window.location.href = logoutUrl;
     } else {
       const loginUrl = new URL(AUTH_LOGIN_PATHNAME, window.location.origin);
