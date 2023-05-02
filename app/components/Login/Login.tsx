@@ -20,7 +20,7 @@ const LoginComp = ({ onActionClick }: LoginProps) => {
   const { wixClient } = useClientAuthSession();
   const isLoggedIn = wixClient?.auth.loggedIn();
   const onLoginClick = async () => {
-    onActionClick(isLoggedIn);
+    onActionClick(!!isLoggedIn);
     if (isLoggedIn) {
       // after logout return to home page
       const { logoutUrl } = await wixClient!.auth.logout(
