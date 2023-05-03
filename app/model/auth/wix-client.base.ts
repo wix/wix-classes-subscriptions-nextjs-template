@@ -7,10 +7,7 @@ import {
 } from '@wix/bookings';
 import { plans, orders } from '@wix/pricing-plans';
 import { redirects } from '@wix/redirects';
-import {
-  WIX_MEMBER_TOKEN,
-  WIX_REFRESH_TOKEN,
-} from '@app/model/auth/auth.const';
+import { WIX_REFRESH_TOKEN } from '@app/model/auth/auth.const';
 import { PHASE_PRODUCTION_BUILD } from 'next/constants';
 
 export type CookieStore = {
@@ -18,11 +15,7 @@ export type CookieStore = {
 };
 const getRefreshToken = (cookieStore: CookieStore) =>
   process.env.NEXT_PHASE !== PHASE_PRODUCTION_BUILD
-    ? JSON.parse(
-        cookieStore.get(WIX_MEMBER_TOKEN) ||
-          cookieStore.get(WIX_REFRESH_TOKEN) ||
-          '{}'
-      )
+    ? JSON.parse(cookieStore.get(WIX_REFRESH_TOKEN) || '{}')
     : {};
 
 /**
