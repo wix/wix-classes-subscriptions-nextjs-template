@@ -29,7 +29,6 @@ export async function middleware(request: NextRequest) {
     cookieStore: request.cookies,
   });
   const isLoggedIn = wixClient?.auth.loggedIn();
-  console.log('****** is logged in middleware: ', isLoggedIn);
   if (!cookies.get(WIX_REFRESH_TOKEN) && !isLoggedIn) {
     await setVisitorTokens({ response: res, wixClient, request });
   }
