@@ -42,7 +42,7 @@ const LoginComp = ({ onActionClick }: LoginProps) => {
       onClick={onLoginClick}
       className="flex flex-nowrap text-highlight gap-2 justify-center items-center font-open-sans-condensed"
     >
-      <div className="w-[22px] h-[22px]">
+      <div className="w-[22px] h-[22px] fill-highlight">
         <MemberAvatar />
       </div>
       <div className="flex relative whitespace-nowrap">

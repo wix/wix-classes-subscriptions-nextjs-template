@@ -22,70 +22,50 @@ const EmptyMemberAvatar = (props: SVGProps<any>) => (
   </svg>
 );
 
-const StyledEmptyMemberAvatar = ({
-  backgroundColor,
-}: {
-  backgroundColor?: string;
-}) => {
-  const backgroundClassName = `fill-${backgroundColor}`;
+const StyledEmptyMemberAvatar = () => {
   return (
-    <EmptyMemberAvatar
-      width="100%"
-      height="100%"
-      className={backgroundClassName}
-    />
+    <EmptyMemberAvatar width="100%" height="100%" className="fill-inherit" />
   );
 };
 
-const LoggedInMemberAvatar = ({
-  backgroundColor,
-}: {
-  backgroundColor?: string;
-}) => {
+const LoggedInMemberAvatar = () => {
   const { data: myMemberDetails, isFetching } = useCurrentMember();
-  const borderClassName = `border-${backgroundColor}`;
 
   return isFetching ? (
     <div className="h-full w-full rounded-full" />
   ) : myMemberDetails?.member?.profile?.photo?.url ? (
     <div
-      className={`h-full w-full rounded-full bg-cover bg-center ${borderClassName} border border-opacity-10`}
+      className={`h-full w-full rounded-full bg-cover bg-center`}
       style={{
         backgroundImage: `url(${myMemberDetails?.member?.profile?.photo?.url})`,
       }}
     ></div>
   ) : (
-    <StyledEmptyMemberAvatar backgroundColor={backgroundColor} />
+    <StyledEmptyMemberAvatar />
   );
 };
 
 const MemberAvatarNoSsr = dynamic(
   () =>
-    Promise.resolve(
-      ({ backgroundColor = 'highlight' }: { backgroundColor?: string }) => {
-        const { wixClient } = useClientAuthSession();
-        const isLoggedIn = wixClient?.auth.loggedIn();
+    Promise.resolve(() => {
+      const { wixClient } = useClientAuthSession();
+      const isLoggedIn = wixClient?.auth.loggedIn();
 
-        return isLoggedIn ? (
-          <LoggedInMemberAvatar backgroundColor={backgroundColor} />
-        ) : (
-          <StyledEmptyMemberAvatar backgroundColor={backgroundColor} />
-        );
-      }
-    ),
+      return isLoggedIn ? (
+        <LoggedInMemberAvatar />
+      ) : (
+        <StyledEmptyMemberAvatar />
+      );
+    }),
   {
     ssr: false,
   }
 );
 
-export default function MemberAvatar({
-  backgroundColor,
-}: {
-  backgroundColor?: string;
-}) {
+export default function MemberAvatar() {
   return (
     <WixBookingsClientProvider>
-      <MemberAvatarNoSsr backgroundColor={backgroundColor} />
+      <MemberAvatarNoSsr />
     </WixBookingsClientProvider>
   );
 }
