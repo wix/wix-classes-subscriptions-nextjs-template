@@ -3,6 +3,7 @@ import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
 import { getMyPlanOrders } from '@app/model/paid-plans/paid-plans-api';
 import { format } from 'date-fns';
 import PlanOrderActions from '@app/components/MyAccount/PricingPlans/PlanOrderActions';
+import { getCurrentMember } from '@app/model/members/members-api';
 
 const DATE_FORMAT = 'MMM dd, yyyy';
 
@@ -10,9 +11,12 @@ const formatDate = (date: Date) => format(new Date(date), DATE_FORMAT);
 
 export default async function MyPlansPage() {
   const wixSession = useServerAuthSession();
-  const { data: planOrders } = await getMyPlanOrders(wixSession);
+  const [{ data: planOrders }, { member }] = await Promise.all([
+    getMyPlanOrders(wixSession),
+    getCurrentMember(wixSession),
+  ]);
   return (
-    <MyAccountSection>
+    <MyAccountSection member={member}>
       <h2 className="text-highlight text-4xl">My Plans</h2>
       <div className="text-sm font-open-sans-condensed py-2">
         <p className="pt-2">

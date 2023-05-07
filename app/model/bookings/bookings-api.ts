@@ -1,6 +1,6 @@
 import { WixSession } from '@app/model/auth/auth';
 import { formatISO } from 'date-fns';
-import { bookings, extendedBookings } from '@wix/bookings';
+import { extendedBookings } from '@wix/bookings';
 
 export const getMyUpcomingBookings = (wixSession: WixSession) =>
   wixSession!.wixClient!.bookings.queryExtendedBookings(

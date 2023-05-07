@@ -7,6 +7,7 @@ import {
 import { useFormattedTimezone } from '@app/hooks/useFormattedTimezone';
 import BookingActions from '@app/components/MyAccount/Bookings/BookingActions';
 import { format } from 'date-fns';
+import { getCurrentMember } from '@app/model/members/members-api';
 
 const DATE_TIME_FORMAT = 'MMM dd, yyyy, h:mm a';
 
@@ -25,14 +26,17 @@ export default async function MyBookingsPage({
 }) {
   const selectedTab = searchParams?.view || SelectedView.UPCOMING;
   const wixSession = useServerAuthSession();
-  const bookings =
+  const [bookings, { member }] = await Promise.all([
     selectedTab === SelectedView.UPCOMING
-      ? await getMyUpcomingBookings(wixSession)
-      : await getMyBookingHistory(wixSession);
+      ? getMyUpcomingBookings(wixSession)
+      : getMyBookingHistory(wixSession),
+    getCurrentMember(wixSession),
+  ]);
+
   const timezoneStr = useFormattedTimezone();
 
   return (
-    <MyAccountSection>
+    <MyAccountSection member={member}>
       <h2 className="text-highlight text-4xl">Manage Your Bookings</h2>
       <div className="text-sm font-open-sans-condensed py-2">
         <p className="pt-2">
