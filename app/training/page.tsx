@@ -16,6 +16,9 @@ export default async function TrainingPage() {
         <h1 className="text-center">Training</h1>
       </div>
       <ServiceListPreviewView services={services} />
+      <div className="px-3 py-12">
+        <h2 className="title text-center">Plans & Pricing</h2>
+      </div>
       <PlansList plans={plans} />
     </>
   );

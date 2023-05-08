@@ -15,5 +15,12 @@ export default async function PlansPage({
   const { data: plans } = await safeGetPaidPlans(wixSession, {
     planIds: planIds ? planIds?.split(',') : undefined,
   });
-  return <PlansList plans={plans} checkoutData={checkoutData} />;
+  return (
+    <div className="max-w-full-content mx-auto pb-8">
+      <div className="px-3 py-12">
+        <h1 className="text-center">Plans & Pricing</h1>
+      </div>
+      <PlansList plans={plans} checkoutData={checkoutData} />
+    </div>
+  );
 }

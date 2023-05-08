@@ -20,7 +20,19 @@ export default async function ClassesPage({}) {
           classes={classes.map(({ id, info: { name } }) => ({ id, name }))}
         />
       ) : (
-        <h2>We currently offer no classes or group sessions</h2>
+        <h2>
+          No classes or group sessions are offered at the moment. Click{' '}
+          <a
+            href="https://manage.wix.com/account/site-selector?actionUrl=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F%7BmetaSiteId%7D%2Fbookings%2Fservices%2Ftemplates-catalog%3Forigin%3DHeadless"
+            target="_blank"
+            rel="noreferrer"
+            className="text-highlight"
+          >
+            here
+          </a>{' '}
+          to go to the business dashboard to add classes or sessions. Once
+          added, they will appear here.
+        </h2>
       )}
     </div>
   );

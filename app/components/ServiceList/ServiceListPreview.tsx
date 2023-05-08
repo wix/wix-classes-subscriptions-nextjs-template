@@ -13,13 +13,29 @@ export default function ServiceListPreviewView({
 
   return (
     <div className="max-w-full-content mx-auto px-4">
-      <div
-        className={`px-4 flex flex-wrap my-3 m-auto grid grid-cols-1 gap-6 ${smClassName} ${mdClassName}`}
-      >
-        {services?.map((service, index) => (
-          <ServiceCardPreview service={service} key={service.id} />
-        ))}
-      </div>
+      {services?.length ? (
+        <div
+          className={`flex flex-wrap my-3 m-auto grid grid-cols-1 gap-6 ${smClassName} ${mdClassName}`}
+        >
+          {services.map((service, index) => (
+            <ServiceCardPreview service={service} key={service.id} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center">
+          No services found. Click{' '}
+          <a
+            href="https://manage.wix.com/account/site-selector?actionUrl=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F%7BmetaSiteId%7D%2Fbookings%2Fservices%2Ftemplates-catalog%3Forigin%3DHeadless"
+            target="_blank"
+            rel="noreferrer"
+            className="text-highlight"
+          >
+            here
+          </a>{' '}
+          to go to the business dashboard to add services. Once added, they will
+          appear here.
+        </div>
+      )}
     </div>
   );
 }
