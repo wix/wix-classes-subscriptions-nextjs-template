@@ -13,7 +13,12 @@ const navbarItems = [
   { scroll: true, ref: '/classes-schedule', label: 'Book Online' },
   { scroll: true, ref: '/plans', label: 'Plans & Pricing' },
   { scroll: false, ref: '/#contact', label: 'Contact' },
-  { scroll: true, ref: '/account/my-account', label: 'My Account' },
+  {
+    scroll: true,
+    ref: '/account/my-account',
+    label: 'My Account',
+    prefetch: false,
+  },
 ];
 
 export function NavBar() {
@@ -55,7 +60,7 @@ export function NavBar() {
         } w-full transition-all duration-500 ease-in-out md:block overflow-hidden max-md:absolute max-md:animate-sideways-once max-md:h-screen max-md:bg-gray-c2 max-md:pt-24 z-40 top-0 right-0`}
       >
         <ul className="flex flex-col items-center md:flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-8 start text-md leading-[22px] px-6">
-          {navbarItems.map(({ ref, label, scroll }) => (
+          {navbarItems.map(({ ref, label, scroll, prefetch }) => (
             <li key={ref} className="relative">
               <StyledNavLink
                 isActive={ref === linkRef}
@@ -65,6 +70,7 @@ export function NavBar() {
                   setIsMenuShown(false);
                 }}
                 scroll={scroll}
+                prefetch={prefetch}
               >
                 {label}
               </StyledNavLink>
