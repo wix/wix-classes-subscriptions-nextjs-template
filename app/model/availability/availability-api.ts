@@ -1,5 +1,6 @@
 import { WixSession } from '../auth/auth';
 import { availabilityCalendar } from '@wix/bookings';
+import { QueryV2 } from '@wix/bookings/build/cjs/src/bookings-availability-v1-slot-availability.universal';
 
 export const getServiceAvailability = (
   wixSession: WixSession,
@@ -38,7 +39,8 @@ export const getServiceAvailability = (
           endDate: to,
         },
         cursorPaging: { ...(limit ? { limit } : {}) },
-      },
+        // till the cursorPaging is exposed again in sdk
+      } as availabilityCalendar.QueryV2,
     },
     wixSession,
   });
