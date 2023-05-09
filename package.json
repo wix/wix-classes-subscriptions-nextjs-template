@@ -31,7 +31,7 @@
     "@types/cookie": "^0.5.1",
     "@types/js-cookie": "^3.0.3",
     "@types/node": "18.13.0",
-    "@types/react": "18.0.27",
+    "@types/react": "18.2.6",
     "@types/react-dom": "18.0.10",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.33.0",
