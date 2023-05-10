@@ -17,6 +17,10 @@ on:
         description: 'Name of the branch to combine PRs into'
         required: true
         default: 'combine-prs-branch'
+      pullRequestLabel:
+        description: 'Label to add to the created PR'
+        required: true
+        default: 'combine-deps'
       ignoreLabel:
         description: 'Exclude PRs with this label'
         required: true
@@ -155,5 +159,5 @@ jobs:
               issue_number: createdPullRequest.data.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['combine-deps']
+              labels: ['${{ github.event.inputs.pullRequestLabel }}']
             })
