@@ -150,7 +150,7 @@ jobs:
               base: baseBranch,
               body: body
             });
-            console.log('Repo created, adding label', {createdPullRequest, type: typeof createdPullRequest.data});
+            console.log('Repo created, adding label to PR number: ', createdPullRequest.data.number);
             await github.rest.issues.addLabels({
               issue_number: createdPullRequest.data.number,
               owner: context.repo.owner,
