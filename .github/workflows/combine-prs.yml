@@ -150,9 +150,9 @@ jobs:
               base: baseBranch,
               body: body
             });
-            console.log('Repo created, adding label');
+            console.log('Repo created, adding label', {createdPullRequest, type: typeof createdPullRequest.data});
             await github.rest.issues.addLabels({
-              issue_number: createdPullRequest.number,
+              issue_number: createdPullRequest.data.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['combine-deps']
