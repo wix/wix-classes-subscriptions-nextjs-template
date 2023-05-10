@@ -151,7 +151,7 @@ jobs:
               body: body
             });
             await github.rest.issues.addLabels({
-              issue_number: context.issue.number,
+              issue_number: createdPullRequest.id,
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: ['combine-deps']
