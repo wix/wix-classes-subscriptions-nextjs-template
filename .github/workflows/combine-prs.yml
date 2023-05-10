@@ -142,7 +142,7 @@ jobs:
               const mergeFailedPRsString = mergeFailedPRs.join('\n');
               body += '\n\n⚠️ The following PRs were left out due to merge conflicts:\n' + mergeFailedPRsString
             }
-            await github.rest.pulls.create({
+            const createdPullRequest = await github.rest.pulls.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Combined PR',
@@ -150,3 +150,9 @@ jobs:
               base: baseBranch,
               body: body
             });
+            await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['combine-deps']
+            })
