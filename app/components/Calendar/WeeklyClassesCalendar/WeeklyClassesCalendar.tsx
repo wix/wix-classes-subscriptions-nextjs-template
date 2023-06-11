@@ -23,6 +23,7 @@ import {
 } from '@app/components/Calendar/calendar.view-model';
 import ClassSlot from '@app/components/Calendar/WeeklyClassesCalendar/WeeklyCalendarSections/ClassSlot';
 import { useRedirectToCheckout } from '@app/hooks/useRedirectToCheckout';
+import testIds from '@app/utils/test-ids';
 
 type WeeklyCalendarProps = {
   classes: { id: string; name: string }[];
@@ -136,6 +137,7 @@ function WeeklyClassesCalendarView({ classes }: WeeklyCalendarProps) {
         </Dropdown>
         <section className="pt-12 flex gap-8 justify-between sm:justify-center w-full px-2">
           <button
+            data-testid={testIds.CLASSES_SCHEDULE.PREV_WEEK_CTA}
             aria-label="previous week"
             onClick={() => setSelectedDate(addDays(selectedDate, -7))}
           >
@@ -145,6 +147,7 @@ function WeeklyClassesCalendarView({ classes }: WeeklyCalendarProps) {
             {formatRangeHeader(selectedDate)}
           </div>
           <button
+            data-testid={testIds.CLASSES_SCHEDULE.NEXT_WEEK_CTA}
             className="rotate-180"
             aria-label="next week"
             onClick={() => setSelectedDate(addDays(selectedDate, 7))}

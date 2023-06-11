@@ -1,6 +1,7 @@
 'use client';
 import { SlotViewModel } from '@app/components/Calendar/calendar.view-model';
 import { formatDistanceStrict } from 'date-fns';
+import testIds from '@app/utils/test-ids';
 
 export default function ClassSlot({
   slot,
@@ -33,6 +34,7 @@ export default function ClassSlot({
         </div>
         <div>
           <button
+            data-testid={testIds.CLASSES_SCHEDULE.CLASS_SLOT_CTA}
             className="btn-main w-full px-0.5"
             type="button"
             onClick={() => onSelect(slot)}
