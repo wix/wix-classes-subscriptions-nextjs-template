@@ -2,6 +2,7 @@ import { plans } from '@wix/pricing-plans';
 import { formatCurrencyToParts } from '@app/utils/price-formtter';
 import PlanSelect from '@app/components/Plan/PlanSelect';
 import { getCheckoutUrl } from '@app/model/paid-plans/paid-plans-checkout';
+import testIds from '@app/utils/test-ids';
 
 const durationPeriodFormatter = (
   period: plans.PeriodUnit = plans.PeriodUnit.UNDEFINED
@@ -59,7 +60,10 @@ export default function PlansList({
   return (
     <div className="max-w-full-content mx-auto">
       {plans?.length ? (
-        <div className="p-4 pt-3 container m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
+        <div
+          className="p-4 pt-3 container m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7"
+          data-testid={testIds.PLAN_LIST.CONTAINER}
+        >
           {plans?.map((plan) => {
             const priceParts = formatCurrencyToParts(
               plan.pricing?.price?.value,
@@ -67,6 +71,7 @@ export default function PlansList({
             );
             return (
               <li
+                data-testid={testIds.PLAN_ITEM.CONTAINER}
                 key={plan._id}
                 className="text-black w-full list-none rounded-none bg-red-300 overflow-hidden mx-auto border-0 m-0 p-0 flex flex-col"
               >

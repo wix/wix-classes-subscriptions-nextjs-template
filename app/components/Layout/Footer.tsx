@@ -2,6 +2,7 @@ import './footer.css';
 import Image from 'next/image';
 import ScrollIntoView from '@app/components/ScrollIntoView/ScrollIntoView';
 import Link from 'next/link';
+import testIds from '@app/utils/test-ids';
 
 const FooterNote = () => (
   <div className="text-sm font-open-sans-condensed text-gray-c1 float-right">
@@ -21,7 +22,10 @@ const FooterNote = () => (
 );
 
 const Footer = () => (
-  <footer className="w-full m-h-56 bg-highlight leading-7 text-black text-gray-c1">
+  <footer
+    className="w-full m-h-56 bg-highlight leading-7 text-black text-gray-c1"
+    data-testid={testIds.LAYOUT.FOOTER}
+  >
     <div className="max-w-full-content mx-auto sm:flex gap-16 pt-14 pb-10 px-3">
       <div className="flex-1 relative">
         <div className="">

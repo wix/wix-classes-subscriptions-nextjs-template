@@ -5,6 +5,7 @@ import {
   galleryItems,
 } from '@app/model/gallery/fitness-instructor';
 import ScrollIntoView from '@app/components/ScrollIntoView/ScrollIntoView';
+import testIds from '@app/utils/test-ids';
 
 const TrainingOptionSelection = ({
   text,
@@ -89,7 +90,10 @@ const GalleryItem = ({
 export default async function Home() {
   return (
     <div>
-      <div className="text-center min-h-screen bg-[url('/home/fitness-background-1.jpg')] parallax-background">
+      <div
+        className="text-center min-h-screen bg-[url('/home/fitness-background-1.jpg')] parallax-background"
+        data-testid={testIds.HOME_PAGE.HEADER}
+      >
         <section className="py-[355px]">
           <h1 className="tracking-widest">Joey Dixon</h1>
           <div className="pt-7">
@@ -98,10 +102,18 @@ export default async function Home() {
             </div>
           </div>
           <div className="pt-14 flex gap-8 justify-center">
-            <a className="btn-secondary text-lg px-7" href="/classes-schedule">
+            <a
+              className="btn-secondary text-lg px-7"
+              href="/classes-schedule"
+              data-testid={testIds.HOME_PAGE.BOOK_CLASS_CTA}
+            >
               Book Now
             </a>
-            <a className="btn-main text-lg px-7" href="/plans">
+            <a
+              className="btn-main text-lg px-7"
+              href="/plans"
+              data-testid={testIds.HOME_PAGE.BOOK_PLAN_CTA}
+            >
               Membership
             </a>
           </div>

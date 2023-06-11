@@ -48,5 +48,7 @@ next-env.d.ts
 
 #IDE
 .idea
-
+/test-results/
+/playwright-report/
+/playwright/.cache/
 

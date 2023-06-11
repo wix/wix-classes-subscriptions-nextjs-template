@@ -2,6 +2,7 @@ import { useServerAuthSession } from '@app/hooks/useServerAuthSession';
 import { safeGetServices } from '@app/model/service/service-api';
 import { services } from '@wix/bookings';
 import WeeklyClassesCalendar from '@app/components/Calendar/WeeklyClassesCalendar/WeeklyClassesCalendar';
+import testIds from '@app/utils/test-ids';
 
 export default async function ClassesPage({}) {
   const wixSession = useServerAuthSession();
@@ -12,7 +13,12 @@ export default async function ClassesPage({}) {
   });
   return (
     <div className="max-w-full-content mx-auto mt-14 px-4">
-      <h1 className="text-center">Book Online</h1>
+      <h1
+        className="text-center"
+        data-testid={testIds.CLASSES_SCHEDULE_PAGE.HEADER}
+      >
+        Book Online
+      </h1>
       <div className="w-full border-b border-gray-600 mt-7 mb-3"></div>
 
       {classes?.length ? (
