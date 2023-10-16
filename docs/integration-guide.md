@@ -1,4 +1,5 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://manage.wix.com/headless-funnel-nextjs/netlify?repository=https://github.com/wix/wix-classes-subscriptions-nextjs-template)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://manage.wix.com/headless-funnel-nextjs/netlify?repository=https://github.com/wix/wix-classes-subscriptions-nextjs-template) &emsp; [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone/hidden?integration-ids=oac_LZ0wUqGylqzgr8bE8a1R7JTE&skippable-integrations=1&build-command=yarn+build&deploymentIds=dpl_9Gtegfcme9RUmTXFvVGrP8BwDGUV&s=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template&demo-image=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template%2Fraw%2Fmain%2Fdocs%2Fmedia%2Ftemplate-showcase.gif&external-id=%7B%22repo%22%3A%22https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template%22%2C%22referralInfo%22%3A%22repo-readme_fitness%22%7D&demo-title=Classes+Scheduling+Starter&demo-description=Personal+Trainer+starter+template+with+Wix%E2%80%99s+best-in-class+classes+scheduling.&demo-url=https%3A%2F%2Fvercel.bookings-classes-demo.wix.dev&repository-name=wix-classes-subscriptions-nextjs-template&referralInfo=repo-readme_fitness)
 
 # Wix Bookings Template: A Next.js Personal Trainer Site
 
@@ -39,6 +40,8 @@ Click the quick start deployment link below to automatically authorize your temp
 
 Authentication credentials are automatically incorporated into the template, making it easy to get started coding and customizing.
 
+---
+
 ##### Netlify
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72e22e17-1362-45b5-84eb-78960ce9851a/deploy-status)](https://app.netlify.com/sites/wix-classes-subscriptions-nextjs/deploys)
 
@@ -46,7 +49,22 @@ Authentication credentials are automatically incorporated into the template, mak
 
 For more information, see [How to Deploy Next.js Sites to Netlify](https://www.netlify.com/blog/2020/11/30/how-to-deploy-next.js-sites-to-netlify/).
 
-You can also view our [live demo site](https://netlify.bookings-classes-demo.wix.dev/). In order to view the full flow in the demo site, use the coupon code `FREE` to book classes, and use the coupon code `FREEPLAN` to "purchase" a paid plan.
+You can also view our [live demo site](https://netlify.bookings-classes-demo.wix.dev/)
+
+---
+
+##### Vercel
+![Vercel](https://vercelbadge.vercel.app/api/wix/wix-classes-subscriptions-nextjs-template?style=flat-square)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone/hidden?integration-ids=oac_LZ0wUqGylqzgr8bE8a1R7JTE&skippable-integrations=1&build-command=yarn+build&deploymentIds=dpl_9Gtegfcme9RUmTXFvVGrP8BwDGUV&s=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template&demo-image=https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template%2Fraw%2Fmain%2Fdocs%2Fmedia%2Ftemplate-showcase.gif&external-id=%7B%22repo%22%3A%22https%3A%2F%2Fgithub.com%2Fwix%2Fwix-classes-subscriptions-nextjs-template%22%2C%22referralInfo%22%3A%22repo-readme_fitness%22%7D&demo-title=Classes+Scheduling+Starter&demo-description=Personal+Trainer+starter+template+with+Wix%E2%80%99s+best-in-class+classes+scheduling.&demo-url=https%3A%2F%2Fvercel.bookings-classes-demo.wix.dev&repository-name=wix-classes-subscriptions-nextjs-template&referralInfo=repo-readme_fitness)
+
+For more information, see [How to Deploy Next.js Sites to Vercel](https://vercel.com/docs/frameworks/nextjs).
+
+You can also view our [live demo site](https://vercel.bookings-classes-demo.wix.dev/). 
+
+---
+
+>In order to view the full flow in the demo site, use the coupon code `FREE` to order products, and use the coupon code `FREETICKET` to "purchase" tickets. This template actively disables reCAPTCHA on direct login.
 
 #### Option B: Create an OAuth client ID in the Wix dashboard
 
