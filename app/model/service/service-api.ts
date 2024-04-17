@@ -5,7 +5,6 @@ import {
 import { WixSession } from '../auth/auth';
 import { safeCall } from '@app/model/utils';
 import { services } from '@wix/bookings';
-import { getService } from '@wix/bookings/build/cjs/src/bookings-services-v2-service.universal';
 
 export const safeGetServices = (
   wixSession?: WixSession,
