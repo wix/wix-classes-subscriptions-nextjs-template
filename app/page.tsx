@@ -163,7 +163,10 @@ export default async function Home() {
               </p>
             </section>
             <section className="mt-5">
-              <ul aria-label="Social Bar" className="flex gap-2 invert -ml-3">
+              <ul
+                aria-label="Social Bar"
+                className="flex gap-2 invert -ml-3 items-center"
+              >
                 <li>
                   <a
                     href="http://www.facebook.com/wix"
@@ -180,15 +183,15 @@ export default async function Home() {
                 </li>
                 <li>
                   <a
-                    href="http://www.twitter.com/wix"
+                    href="https://www.x.com/wix"
                     target="_blank"
                     rel="noreferrer"
                   >
                     <Image
-                      width={43}
-                      height={43}
-                      src="https://static.wixstatic.com/media/c7d035ba85f6486680c2facedecdcf4d.png"
-                      alt="Twitter"
+                      width={28}
+                      height={28}
+                      src="https://static.wixstatic.com/media/2be684_ea277e5149dc4b86ab826475d4d64c41~mv2.png"
+                      alt="X"
                     />
                   </a>
                 </li>

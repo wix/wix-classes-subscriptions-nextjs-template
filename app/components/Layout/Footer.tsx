@@ -65,15 +65,15 @@ const Footer = () => (
               </li>
               <li>
                 <a
-                  href="http://www.twitter.com/wix"
+                  href="https://www.x.com/wix"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Image
                     width={32}
                     height={32}
-                    src="https://static.wixstatic.com/media/870f97661ed14a5bb2d96ecbddec0aed.png"
-                    alt="Twitter"
+                    src="https://static.wixstatic.com/media/2be684_810b1f12e8d04a30b1ec920caf3af383~mv2.png"
+                    alt="X"
                   />
                 </a>
               </li>
